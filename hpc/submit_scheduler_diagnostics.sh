@@ -14,7 +14,7 @@ PARTITION="$(scontrol show partition longq -o)"
 [[ "$PARTITION" =~ MaxTime=([^[:space:]]+) ]] || { echo "Unable to read longq time limit"; exit 2; }
 MAXTIME="${BASH_REMATCH[1]}"
 TIME="04:00:00"
-if [[ "$MODE" == development ]]; then TIME="1-00:00:00"; fi
+if [[ "$MODE" == development ]]; then TIME="10:00:00"; fi
 # If the requested time is above partition MaxTime, Slurm may reject it.
 echo "Requested time=$TIME; longq MaxTime=$MAXTIME; 4 CPUs, 0 GPUs"
 sbatch --time="$TIME" --output="$PCSLICE_ROOT/logs/pcslice_scheduler_%j.out" \
