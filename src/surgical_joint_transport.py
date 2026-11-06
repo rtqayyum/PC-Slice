@@ -176,6 +176,12 @@ class JointTransport:
                     useful=min(h,candidate.goal_tick) if candidate.goal_tick is not None else h
                     useful=max(1,useful-coverage_deadline)
                     score=wire/useful
+                    if self.method == 'joint_progress':
+                        from .surgical_scheduler_scoring import progress_weighted_cost
+                        target=self.planner.shadow.waypoints[observed[6].waypoint]
+                        score,_=progress_weighted_cost(
+                            wire,useful,candidate.plan.prediction,target,observed[3],
+                            c['waypoint_tolerance_m'],c.get('progress_deficit_weight',2.0))
                     options.append((score,candidate,feasible,token_wait))
                 elapsed=time.perf_counter()-started
                 self.planning_seconds+=elapsed
