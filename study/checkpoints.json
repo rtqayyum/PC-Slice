@@ -1,0 +1,20 @@
+[
+  {
+    "repo_id": "mistralai/Mistral-7B-Instruct-v0.3",
+    "revision": "c170c708c41dac9275d15a8fff4eca08d52bab71",
+    "name": "Mistral-7B-Instruct-v0.3",
+    "checkpoint_manifest_sha256": "0fc4b9ee868d40900faf8380f1d58b2c1405e15a1ea821b51b520e8ede725aa6"
+  },
+  {
+    "repo_id": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "name": "Qwen2.5-7B-Instruct",
+    "checkpoint_manifest_sha256": "dfab77d6362147c29ff4477bc1aabb0b11786803ba449c4752c3499441a8c7cb"
+  },
+  {
+    "repo_id": "microsoft/Phi-3.5-mini-instruct",
+    "revision": "2fe192450127e6a83f7441aef6e3ca586c338b77",
+    "name": "Phi-3.5-mini-instruct",
+    "checkpoint_manifest_sha256": "504f98f89ce2198a8a82366f007a0c2f3de41e97aba7c645107b98bfc59beee8"
+  }
+]

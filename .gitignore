@@ -1,0 +1,10 @@
+envs/
+.venv*/
+models/
+data/sources/
+results/
+logs/
+__pycache__/
+*.pyc
+.DS_Store
+figures/build/

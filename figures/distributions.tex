@@ -1,0 +1,22 @@
+\begin{figure*}[t]\centering
+\begin{tikzpicture}
+\begin{axis}[compactmethods,width=.31\textwidth,height=5.1cm,xmode=log,xmin=.4,xmax=250,xtick={1,10,100},xlabel={Placement error (mm)},title={(a) Final placement},title style={font=\footnotesize},xmajorgrids=true,ymajorgrids=false]
+\addplot[only marks,mark=none,error bars/.cd,x dir=both,x explicit] table[x=median,y=id,x error minus expr=\thisrow{median}-\thisrow{low},x error plus expr=\thisrow{high}-\thisrow{median}] {data/distribution_final_error_m.dat};
+\addplot[only marks,mark=none,error bars/.cd,x dir=both,x explicit,error bar style={pcblue,line width=3pt},error mark=none] table[x=median,y=id,x error minus expr=\thisrow{median}-\thisrow{q1},x error plus expr=\thisrow{q3}-\thisrow{median}] {data/distribution_final_error_m.dat};
+\addplot[only marks,mark=*,mark size=2pt,black] table[x=median,y=id] {data/distribution_final_error_m.dat};
+\draw[black!50,dashed] (axis cs:5,-.5)--(axis cs:5,8.5);
+\end{axis}
+\begin{axis}[at={(.35\textwidth,0)},anchor=south west,compactmethods,yticklabels=\empty,width=.29\textwidth,height=5.1cm,xmin=-90,xmax=25,xtick={-80,-40,0,20},xlabel={Minimum clearance (mm)},title={(b) Constraint clearance},title style={font=\footnotesize},xmajorgrids=true,ymajorgrids=false]
+\addplot[only marks,mark=none,error bars/.cd,x dir=both,x explicit] table[x=median,y=id,x error minus expr=\thisrow{median}-\thisrow{low},x error plus expr=\thisrow{high}-\thisrow{median}] {data/distribution_minimum_clearance_m.dat};
+\addplot[only marks,mark=none,error bars/.cd,x dir=both,x explicit,error bar style={pcblue,line width=3pt},error mark=none] table[x=median,y=id,x error minus expr=\thisrow{median}-\thisrow{q1},x error plus expr=\thisrow{q3}-\thisrow{median}] {data/distribution_minimum_clearance_m.dat};
+\addplot[only marks,mark=*,mark size=2pt,black] table[x=median,y=id] {data/distribution_minimum_clearance_m.dat};
+\draw[pcorange,dashed,thick] (axis cs:0,-.5)--(axis cs:0,8.5);
+\end{axis}
+\begin{axis}[at={(.68\textwidth,0)},anchor=south west,compactmethods,yticklabels=\empty,width=.29\textwidth,height=5.1cm,xmin=0,xmax=100,xtick={0,50,100},xlabel={Active fallback (\%)},title={(c) Fallback exposure},title style={font=\footnotesize},xmajorgrids=true,ymajorgrids=false]
+\addplot[only marks,mark=none,error bars/.cd,x dir=both,x explicit] table[x=median,y=id,x error minus expr=\thisrow{median}-\thisrow{low},x error plus expr=\thisrow{high}-\thisrow{median}] {data/distribution_active_fallback_fraction.dat};
+\addplot[only marks,mark=none,error bars/.cd,x dir=both,x explicit,error bar style={pcblue,line width=3pt},error mark=none] table[x=median,y=id,x error minus expr=\thisrow{median}-\thisrow{q1},x error plus expr=\thisrow{q3}-\thisrow{median}] {data/distribution_active_fallback_fraction.dat};
+\addplot[only marks,mark=*,mark size=2pt,black] table[x=median,y=id] {data/distribution_active_fallback_fraction.dat};
+\end{axis}
+\end{tikzpicture}
+\caption{Task-outcome distributions over all 32 settings, including failed trials. Dots: medians; thick segments: interquartile range; thin segments: observed range, not confidence intervals. The placement tolerance is 5 mm (dashed); clearance below zero (orange) is a breach. Clearance includes the workspace and sphere. Completed hold is excluded from active fallback. Method codes are defined in Section~\ref{sec:algorithms}.}\label{fig:distributions}
+\end{figure*}

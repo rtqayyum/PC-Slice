@@ -1,0 +1,26 @@
+\begin{figure*}[t]
+\centering
+\begin{tikzpicture}[x=1cm,y=1cm,>=Latex,font=\footnotesize,
+ box/.style={draw=pcblue,rounded corners,fill=pcblue!5,align=center,minimum height=1.05cm,text width=2.5cm},
+ link/.style={->,thick,pcblue},service/.style={->,thick,pcorange,dashed}]
+\node[box] (req) at (0,3) {Authored service request\\Scope / approval token};
+\node[box] (llm) at (3.4,3) {LLM + optional RAG\\Measured request time};
+\node[box,draw=pcorange,fill=pcorange!5] (guard) at (7,3) {Independent guard\\Registered service only};
+\node[box] (cap) at (10.6,3) {Queued service cap\\Activation after latency};
+\node[box] (planner) at (0,0) {Sender forecast / planner\\Received state and ACKs};
+\node[box] (credit) at (3.4,0) {Shared byte budget\\Command + feedback};
+\node[box] (network) at (6.8,0) {Delay / loss emulation\\Absolute timestamps};
+\node[box] (check) at (10.2,0) {Receiver command check\\Otherwise hold};
+\node[box] (plant) at (13.6,0) {Articulated PSM\\Physics / task progress};
+\draw[link] (req)--(llm);\draw[link] (llm)--(guard);\draw[link] (guard)--(cap);
+\draw[service] (cap.south) --++(0,-.7)-| (credit.north);
+\draw[link] (planner)--node[above]{plan}(credit);
+\draw[link] (credit)--(network);\draw[link] (network)--(check);\draw[link] (check)--(plant);
+\draw[link] (plant.south)--++(0,-1.05)-|node[pos=.22,below,align=center]{Sampled state, executed milestones, completion, buffered-plan ACKs\\Charged feedback traverses independently impaired return transport} (planner.south);
+\node[align=center,text=pcgray] at (13.7,2.9) {No language authority\\over motion, geometry,\\checker, or fallback};
+\begin{scope}[on background layer]
+\node[draw=pcorange!60,dashed,fit=(req)(llm)(guard)(cap),inner sep=9pt,label={[font=\scriptsize,text=pcorange]above:Service-policy plane (outside fast motion loop)}] {};
+\end{scope}
+\end{tikzpicture}
+\caption{Architecture schematic, not measured data. Both command and return streams consume the aggregate budget. Planning and policy wall times enter the simulation timeline before transmission or activation. Receiver progress is based on executed state; the sender learns it only through received feedback.}\label{fig:architecture}
+\end{figure*}

@@ -1,0 +1,12 @@
+\begin{figure*}[t]\centering
+\begin{tikzpicture}
+\begin{axis}[methods,width=.46\textwidth,height=5.6cm,xmode=log,xmin=10,xmax=10000,xtick={10,100,1000,10000},xlabel={Planning-call p95 (ms; logarithmic)},xmajorgrids=true,ymajorgrids=false]
+\addplot[only marks,mark=none,error bars/.cd,x dir=both,x explicit] table[x=median,y=id,x error minus expr=\thisrow{median}-\thisrow{low},x error plus expr=\thisrow{high}-\thisrow{median}] {data/distribution_planning_seconds_p95.dat};
+\addplot[only marks,mark=*,mark size=2.6pt,pcblue] table[x=median,y=id] {data/distribution_planning_seconds_p95.dat};
+\end{axis}
+\begin{axis}[at={(.52\textwidth,0)},anchor=south west,compactmethods,yticklabels=\empty,width=.43\textwidth,height=5.6cm,xmin=0,xmax=100,xtick={0,25,50,75,100},xlabel={Plans available after start (\%)},xmajorgrids=true,ymajorgrids=false]
+\addplot[xbar,bar width=7pt,fill=pcpurple!70,draw=none] table[x=late,y=id] {data/planning_transport.dat};
+\end{axis}
+\end{tikzpicture}
+\caption{Computation and usable late-prefix behavior. Left: each trial's p95 planning-call time, summarized by its across-trial median and observed range. Right: transmitted plans becoming available after their original start, among all sent plans. Late usable prefixes retain timestamps. Already-expired unsent EM*/PM* plans (20/28) are discarded and are not counted as transmissions. Reduced MPC timings characterize these adaptations, not the published implementation in~\cite{mpc2025}.}\label{fig:computation}
+\end{figure*}

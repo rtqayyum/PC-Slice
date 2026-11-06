@@ -1,0 +1,30 @@
+{
+  "observed_systems": 288,
+  "observed_policy": 300,
+  "method_order": {
+    "FS": "fixed_plan_short",
+    "FL": "fixed_plan_long",
+    "FX": "fixed_plan_extended",
+    "EV": "event_plan",
+    "EM": "et_mpc_adapted",
+    "PM": "periodic_mpc_adapted",
+    "JP": "joint_plan",
+    "JS": "joint_fixed_short",
+    "NC": "joint_no_checker"
+  },
+  "network_profile_order": [
+    "freefault1",
+    "delay1",
+    "delay2",
+    "delay3",
+    "packetloss1",
+    "packetloss3",
+    "communicationloss2",
+    "communicationloss3"
+  ],
+  "intervals": "Median, interquartile interval, and observed min/max; not confidence intervals",
+  "completion_curves": "Safe completions by t divided by all 32 matched trials; failures retained at horizon",
+  "planning_p95": "Per-trial 95th percentile planning-call wall time, then summarized over 32 trials",
+  "activation_coverage": "Correct original-request service activations out of five valid selection requests; missing-evidence abstention may be appropriate",
+  "no_new_experiments": true
+}

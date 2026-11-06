@@ -1,0 +1,41 @@
+{
+  "extends": "surgical_task.json",
+  "version": "pcslice-surgical-packetized-v2",
+  "backend": "packetized-v2",
+  "proposed_method": "adaptive_plan",
+  "comparison_baselines": ["fixed_plan_short", "fixed_plan_long", "event_plan"],
+  "methods": ["instant_event_checked", "fixed_plan_short", "fixed_plan_long", "event_plan", "adaptive_plan", "adaptive_no_checker"],
+  "plan_stride_ticks": 4,
+  "short_plan_ticks": 36,
+  "long_plan_ticks": 72,
+  "initial_delay_estimate_ticks": 6,
+  "max_lead_ticks": 60,
+  "fixed_short_period_ticks": 18,
+  "fixed_long_period_ticks": 30,
+  "event_error_m": 0.003,
+  "adaptive_min_error_m": 0.00075,
+  "refresh_guard_ticks": 8,
+  "seeds": [11001, 11002, 11003, 11004, 11005, 11006, 11007, 11008, 11009, 11010],
+  "stress_conditions": ["nominal", "unsafe_plan", "weaker_actuation", "delayed_checker"],
+  "stress_methods": ["fixed_plan_long", "adaptive_plan", "adaptive_no_checker"],
+  "stress_networks": ["freefault1", "delay1", "delay2"],
+  "layouts": [
+    {"id": "dev_v2_yplus", "split": "development", "axis": "y", "sign": 1, "z_shift_m": 0.0},
+    {"id": "dev_v2_yminus", "split": "development", "axis": "y", "sign": -1, "z_shift_m": 0.004},
+    {"id": "v2_test_yplus_a", "split": "test", "axis": "y", "sign": 1, "z_shift_m": -0.0025},
+    {"id": "v2_test_yminus_a", "split": "test", "axis": "y", "sign": -1, "z_shift_m": -0.0025},
+    {"id": "v2_test_zplus", "split": "test", "axis": "z", "sign": 1, "z_shift_m": 0.0015},
+    {"id": "v2_test_zminus", "split": "test", "axis": "z", "sign": -1, "z_shift_m": 0.0015},
+    {"id": "v2_test_yplus_b", "split": "test", "axis": "y", "sign": 1, "z_shift_m": 0.0035},
+    {"id": "v2_test_yminus_b", "split": "test", "axis": "y", "sign": -1, "z_shift_m": 0.0035}
+  ],
+  "policy": {
+    "layouts": ["v2_test_yplus_a", "v2_test_zplus"],
+    "seeds": [12001, 12002]
+  },
+  "origins": {
+    "revision": "604645 is development/diagnostic evidence for v2, never a fresh confirmatory test. New layouts and seeds are withheld until the v2 bundle is frozen; they are related authored simulations, not independent clinical data.",
+    "controller_change": "Finite timestamped predicted joint-velocity sequences; all v2 comparators share planner, checker, byte accounting, geometry and controller. This changes the command protocol, not the success tolerance or clinical limits. No established PPC stability theorem is claimed for this implementation.",
+    "packet_cost": "Serialized 14-byte application header plus 6 float32 values per knot, plus declared 28-byte IPv4/UDP overhead; excludes link-layer overhead. Common byte budget equals original packet-equivalent rate times 124 bytes."
+  }
+}

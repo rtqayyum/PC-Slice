@@ -1,0 +1,26 @@
+{
+  "scope": "Observed development data only; no synthetic results",
+  "source_sha256": {
+    "analysis/surgical_v3_gate_622320/analysis.json": "fbf5785b8116c7c7963deef544438dc5f3b9b46f3f16939e49f7c5e1a1f41c5a",
+    "analysis/surgical_v3_gate_622320/trial_analysis.json": "c33cd930be765660abe8a40263da405127b52c4bf89369302a38446526952244",
+    "results_hpc/surgical_v3_gate_622320/run/development_manifest.json": "75f3cf7b1ac248b351b1897fdb633cbb5ad21dc1b71d3466864c489f7d9e20d5",
+    "results_hpc/surgical_v3_gate_622320/run/systems/8bebce7ca2b9299ff5f8/trajectory.jsonl.gz": "83162796d2e3bd4b1a97f3544336bb8fee25ecbe1406a07d1069f71e9273b10b",
+    "results_hpc/surgical_v3_gate_622320/run/systems/a88300eca47930a207c8/trajectory.jsonl.gz": "274112986088118c531daeb3ebf88452379de8bddbadc19561e75aec9f173488",
+    "results_hpc/surgical_v3_gate_622320/run/systems/cbe398c2935cfed104e6/trajectory.jsonl.gz": "5d65476fa711c5622364f48cdc5eedb40f628885b1c0dc80f262470169a93b49",
+    "results_hpc/surgical_v3_gate_622320/run/systems/f53e7489a597c363b02c/trajectory.jsonl.gz": "ebf46607b23df51ec1646eb0a444847f299bd7ee2b8850a260282bc00b0f5ca3"
+  },
+  "method_mapping": {
+    "FS": "fixed_plan_short",
+    "FL": "fixed_plan_long",
+    "FX": "fixed_plan_extended",
+    "EV": "event_plan",
+    "EM": "et_mpc_adapted",
+    "PM": "periodic_mpc_adapted",
+    "JP": "joint_plan",
+    "JS": "joint_fixed_short",
+    "NC": "joint_no_checker"
+  },
+  "system_executions": 288,
+  "policy_executions": 300,
+  "figures": "All numerical plots rendered by TikZ/PGFPlots from these .dat files; schematic drawings explicitly labeled."
+}

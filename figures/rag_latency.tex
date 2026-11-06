@@ -1,0 +1,17 @@
+\begin{figure*}[t]\centering
+\begin{tikzpicture}
+\begin{axis}[width=.48\textwidth,height=4.6cm,xmin=-.5,xmax=11.5,ymin=0,ymax=7,xtick={0,...,11},xticklabels={N,T,P,M,N,T,P,M,N,T,P,M},ylabel={Request latency (s)},xlabel={Qwen2.5-7B\hspace{8mm}Mistral-7B\hspace{8mm}Phi-3.5-mini},legend style={at={(.5,1.03)},anchor=south,legend columns=2}]
+\addplot[only marks,mark=*,mark size=2pt,pcblue,error bars/.cd,y dir=plus,y explicit,error bar style={pcblue}] table[x expr=\thisrow{id}-.11,y=median,y error expr=\thisrow{p95}-\thisrow{median}] {data/latency_strict.dat};
+\addplot[only marks,mark=square*,mark size=2pt,pcorange,error bars/.cd,y dir=plus,y explicit,error bar style={pcorange}] table[x expr=\thisrow{id}+.11,y=median,y error expr=\thisrow{p95}-\thisrow{median}] {data/latency_constrained.dat};
+\draw[black!25,dashed] (axis cs:3.5,0)--(axis cs:3.5,7);
+\draw[black!25,dashed] (axis cs:7.5,0)--(axis cs:7.5,7);
+\legend{Strict,Constrained}
+\end{axis}
+\begin{axis}[at={(.55\textwidth,0)},anchor=south west,width=.42\textwidth,height=4.6cm,ybar,bar width=11pt,ymin=0,ymax=100,xtick={1,2,3},xticklabels={Top-3,Policy,Missing},ylabel={Retrieved evidence (\%)},enlarge x limits=.2,legend style={at={(.5,1.03)},anchor=south,legend columns=2}]
+\addplot[fill=pcblue!80,draw=none] table[x=condition,y=recall] {data/retrieval_nonempty.dat};
+\addplot[fill=pcgreen!65,draw=none] table[x=condition,y=precision] {data/retrieval_nonempty.dat};
+\legend{Recall,Precision}
+\end{axis}
+\end{tikzpicture}
+\caption{Interface timing and retrieval quality. Left: median request latency with an upper segment to the observed p95, twelve requests per point; N/T/P/M denote no retrieval/top-three/policy-aware/missing. Right: mean relevant-evidence recall and precision; document selection is shared across models. Higher recall does not guarantee better decisions: policy-aware retrieval reduces Qwen correctness relative to top-three retrieval.}\label{fig:raglatency}
+\end{figure*}

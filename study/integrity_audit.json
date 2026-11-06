@@ -1,0 +1,14 @@
+{
+  "integrity": "PASS",
+  "development_only": true,
+  "counts": {
+    "systems": 288,
+    "policy": 300
+  },
+  "artifact_hashes_verified": 2731,
+  "frozen_implementation_files_verified": 99,
+  "system_gate_pass": false,
+  "final_release": false,
+  "checkpoint_weights_rehashed": false,
+  "scientific_superiority_established_by_audit": false
+}

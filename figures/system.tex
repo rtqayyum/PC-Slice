@@ -1,0 +1,16 @@
+\begin{figure*}[t]\centering
+\begin{tikzpicture}
+\begin{axis}[methods,width=.48\textwidth,height=5.6cm,xmin=0,xmax=100,xtick={0,25,50,75,100},xlabel={Safe completion (\%)},xmajorgrids=true,ymajorgrids=false]
+\addplot[only marks,mark=*,mark size=2.5pt,pcblue] table[x=success,y=id] {data/comparison_summary.dat};
+\addplot[only marks,mark=diamond*,mark size=4pt,pcorange] coordinates {(78.125,6)};
+\end{axis}
+\begin{axis}[at={(.53\textwidth,0)},anchor=south west,compactmethods,yticklabels=\empty,width=.45\textwidth,height=5.6cm,
+ xbar stacked,bar width=7pt,xmin=0,xmax=22,xtick={0,5,10,15,20},xlabel={Mean command + feedback traffic (kB)},
+ legend style={at={(.5,1.02)},anchor=south,legend columns=2},xmajorgrids=true,ymajorgrids=false]
+\addplot[fill=pcblue!85,draw=none] table[x=control,y=id] {data/comparison_summary.dat};
+\addplot[fill=pcgray!35,draw=none] table[x=feedback,y=id] {data/comparison_summary.dat};
+\legend{Command,Feedback}
+\end{axis}
+\end{tikzpicture}
+\caption{Matched task and communication comparison (32 executions per method). The orange diamond marks PC-Slice. Method order is shared across both panels; one kB is 1,000 bytes. Asterisks identify reduced MPC adaptations inspired by~\cite{mpc2025}, rather than faithful published-controller reproductions. Fixed short, event plan, and joint/fixed short each achieve 26/32 safe completions versus 25/32 for PC-Slice, with less management traffic.}\label{fig:system}
+\end{figure*}

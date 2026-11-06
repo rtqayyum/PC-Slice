@@ -1,0 +1,15 @@
+{
+  "assessment": "PASS",
+  "base_checks": 61600,
+  "repair_checks": 3830873,
+  "control_ticks": 564480,
+  "read_only_analysis": true,
+  "final_release": false,
+  "helper_source_hashes": {
+    "surgical_v3_audit.py": "57aedf77c51da25b1ac8d093e5dc491c7ac900e0c30232ee68f99220b82ccb42",
+    "surgical_audit.py": "6cdf3c629fedb7af6bcc03bb8c709172f541488b0603c43e9fdebdfbe78a2df1",
+    "surgical_policy.py": "00028dd7c0c7d91921e9a016f59735e16a116ef76b2341d3ed57bd0e4a786b24",
+    "policy_benchmark.py": "889d5342788699785f2bc30df5f7c8043f7b8d1b966ad5999cd45a824fb18336",
+    "surgical_campaign.py": "d2e695fa61c7592b208746ec2b31c1e425f86a71ba6433fc8689529ca57563c7"
+  }
+}

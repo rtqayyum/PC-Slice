@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "Please cite this project source snapshot. Manuscript author metadata will be added by the authors."
+title: "PC-Slice: Communication-Conditioned Surgical Instrument Reaching With Guarded LLM Service Policies"
+type: software
+version: "0.1.0-development-study"
+date-released: 2026-11-06
+repository-code: "https://github.com/rtqayyum/PC-Slice"
+url: "https://github.com/rtqayyum/PC-Slice"
+authors:
+  - name: "PC-Slice project contributors"
+abstract: "Audited comparative simulation code and reported result data; no allocator superiority or clinical safety guarantee is established."

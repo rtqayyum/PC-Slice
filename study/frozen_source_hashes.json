@@ -1,0 +1,154 @@
+{
+  "source_run": "622320",
+  "scope": "Frozen experiment modules copied byte for byte; portable publication tools are separate",
+  "files": {
+    "src/surgical_campaign.py": {
+      "original_sha256": "d2e695fa61c7592b208746ec2b31c1e425f86a71ba6433fc8689529ca57563c7",
+      "published_sha256": "d2e695fa61c7592b208746ec2b31c1e425f86a71ba6433fc8689529ca57563c7"
+    },
+    "src/model_setup.py": {
+      "original_sha256": "55e576e845edaeb75634855bec2e2c025389a819f016e75c3ea65bbeb6f6e45c",
+      "published_sha256": "55e576e845edaeb75634855bec2e2c025389a819f016e75c3ea65bbeb6f6e45c"
+    },
+    "src/prepare_surgical_sources.py": {
+      "original_sha256": "a6524e04017f48487aefabd9bc04fc14f329e87513488420b0717a8ae172983a",
+      "published_sha256": "a6524e04017f48487aefabd9bc04fc14f329e87513488420b0717a8ae172983a"
+    },
+    "src/surgical_report.py": {
+      "original_sha256": "e99cd1ba2a9f24b38d4123dc706bc4869bd5803f7514fc7384e412446c73c84d",
+      "published_sha256": "e99cd1ba2a9f24b38d4123dc706bc4869bd5803f7514fc7384e412446c73c84d"
+    },
+    "src/surgical_joint_transport.py": {
+      "original_sha256": "6babac8091c1e2e8ea7415a74c32d820994564647e701b4b3fce1f59c932e3c7",
+      "published_sha256": "6babac8091c1e2e8ea7415a74c32d820994564647e701b4b3fce1f59c932e3c7"
+    },
+    "src/surgical_transport.py": {
+      "original_sha256": "cfc5ca5d187dc44308d208c100c6d16964a00dcb5fa5167853d140eb120aa71b",
+      "published_sha256": "cfc5ca5d187dc44308d208c100c6d16964a00dcb5fa5167853d140eb120aa71b"
+    },
+    "src/policy_benchmark.py": {
+      "original_sha256": "889d5342788699785f2bc30df5f7c8043f7b8d1b966ad5999cd45a824fb18336",
+      "published_sha256": "889d5342788699785f2bc30df5f7c8043f7b8d1b966ad5999cd45a824fb18336"
+    },
+    "src/network_replay.py": {
+      "original_sha256": "12908dacce8f9befb6e67806b9cbf3e6f0ad5d31455d250a69ebb58f112995ef",
+      "published_sha256": "12908dacce8f9befb6e67806b9cbf3e6f0ad5d31455d250a69ebb58f112995ef"
+    },
+    "src/surgical_progress.py": {
+      "original_sha256": "9dcb0b00311046ae1aa9f4f54da40fe30e6f298ac214a6026c7eb2282b87f0ba",
+      "published_sha256": "9dcb0b00311046ae1aa9f4f54da40fe30e6f298ac214a6026c7eb2282b87f0ba"
+    },
+    "src/surgical_v3_audit.py": {
+      "original_sha256": "57aedf77c51da25b1ac8d093e5dc491c7ac900e0c30232ee68f99220b82ccb42",
+      "published_sha256": "57aedf77c51da25b1ac8d093e5dc491c7ac900e0c30232ee68f99220b82ccb42"
+    },
+    "src/surgical_audit.py": {
+      "original_sha256": "6cdf3c629fedb7af6bcc03bb8c709172f541488b0603c43e9fdebdfbe78a2df1",
+      "published_sha256": "6cdf3c629fedb7af6bcc03bb8c709172f541488b0603c43e9fdebdfbe78a2df1"
+    },
+    "src/__init__.py": {
+      "original_sha256": "a1f5a486aa8fbbb58551557a8a1688f367907f4ca77b206803687627e4c23833",
+      "published_sha256": "a1f5a486aa8fbbb58551557a8a1688f367907f4ca77b206803687627e4c23833"
+    },
+    "src/surgical_v3_development.py": {
+      "original_sha256": "d5cdb96e146827923103937e5bc6eb2cb8533853b9bd527b0693ee95e270acf5",
+      "published_sha256": "d5cdb96e146827923103937e5bc6eb2cb8533853b9bd527b0693ee95e270acf5"
+    },
+    "src/surgical_v3_gate.py": {
+      "original_sha256": "f388deefe5af0126d9b8fc6831fc1da1526a61b155abe4a16e211ef2fd92e88f",
+      "published_sha256": "f388deefe5af0126d9b8fc6831fc1da1526a61b155abe4a16e211ef2fd92e88f"
+    },
+    "src/surgical_policy.py": {
+      "original_sha256": "00028dd7c0c7d91921e9a016f59735e16a116ef76b2341d3ed57bd0e4a786b24",
+      "published_sha256": "00028dd7c0c7d91921e9a016f59735e16a116ef76b2341d3ed57bd0e4a786b24"
+    },
+    "src/surgical_joint_planner.py": {
+      "original_sha256": "2d52722c65fbde82328eb4dfcc87015cc108b6dfdfbc33aee3d354a7cf33d775",
+      "published_sha256": "2d52722c65fbde82328eb4dfcc87015cc108b6dfdfbc33aee3d354a7cf33d775"
+    },
+    "src/surgical_robot.py": {
+      "original_sha256": "15b8074675a360b13e179fef2cdd15c1d2323758fbf301290a0d739fce1b8ab4",
+      "published_sha256": "15b8074675a360b13e179fef2cdd15c1d2323758fbf301290a0d739fce1b8ab4"
+    },
+    "src/prepare_v3_environment.py": {
+      "original_sha256": "e2be7c31152ef4ad43276423a58682b44e01e39f70d4c96daa03edb7d5ba86de",
+      "published_sha256": "e2be7c31152ef4ad43276423a58682b44e01e39f70d4c96daa03edb7d5ba86de"
+    },
+    "src/surgical_feedback.py": {
+      "original_sha256": "6069c3d679d9787262192fd5e5652328eb2c62a30707eaf2b9f31ab9fb9f54ce",
+      "published_sha256": "6069c3d679d9787262192fd5e5652328eb2c62a30707eaf2b9f31ab9fb9f54ce"
+    },
+    "src/surgical_plans.py": {
+      "original_sha256": "b629df82aeae6ca6a75d2047eedfaf5aa8694c8f9fec3825764306624294afb5",
+      "published_sha256": "b629df82aeae6ca6a75d2047eedfaf5aa8694c8f9fec3825764306624294afb5"
+    },
+    "src/build_policy_cases.py": {
+      "original_sha256": "d7add0ba16df0384a7cdc79beff25c6059ab3dd2dd4f886c335863052f179b54",
+      "published_sha256": "75e9d2cea7c870e1aaf7b70f44422f5c01de3c5c861d6a828f83b92525d0ed2c"
+    },
+    "src/surgical_simulation.py": {
+      "original_sha256": "ffe91eb6efbfea69794cb3c3c88b370284ff1e54b455fbda31a0e3d849b2e6d3",
+      "published_sha256": "ffe91eb6efbfea69794cb3c3c88b370284ff1e54b455fbda31a0e3d849b2e6d3"
+    },
+    "src/surgical_v3_repair_validation.py": {
+      "original_sha256": "75c854732ba520d7af2a95fcff5fc78c1b1f944f99f5c78cafcc0def3ca57116",
+      "published_sha256": "75c854732ba520d7af2a95fcff5fc78c1b1f944f99f5c78cafcc0def3ca57116"
+    },
+    "src/inference_settings.py": {
+      "original_sha256": "a929bb21488cbd02d2b4f65cede0e3b310a4b803ea6bbe5aec24df0d43b95853",
+      "published_sha256": "a929bb21488cbd02d2b4f65cede0e3b310a4b803ea6bbe5aec24df0d43b95853"
+    },
+    "tests/test_surgical_policy.py": {
+      "original_sha256": "8d2c6069f7349b4e45d5818b85fbee6685be56bf27f3414f744335cba073e361",
+      "published_sha256": "8d2c6069f7349b4e45d5818b85fbee6685be56bf27f3414f744335cba073e361"
+    },
+    "tests/test_surgical_joint.py": {
+      "original_sha256": "1d1df42752f170d259b5e64bd334594181f6626b8c790bcbb515355c8b01f08a",
+      "published_sha256": "1d1df42752f170d259b5e64bd334594181f6626b8c790bcbb515355c8b01f08a"
+    },
+    "tests/test_surgical_plans.py": {
+      "original_sha256": "3c15c22ece5a227a37cb8b2cec47d6885fc33e8dbea5e5fbab1d598700ed65d9",
+      "published_sha256": "3c15c22ece5a227a37cb8b2cec47d6885fc33e8dbea5e5fbab1d598700ed65d9"
+    },
+    "tests/test_surgical_environment.py": {
+      "original_sha256": "f17f394218d74c80777d366481d48875e84bba796318c7d56ee45e9ab27c6f02",
+      "published_sha256": "f17f394218d74c80777d366481d48875e84bba796318c7d56ee45e9ab27c6f02"
+    },
+    "tests/test_surgical_integration.py": {
+      "original_sha256": "237c1eece6683eabf81b7a2850abda401655de5732657c47cd5b3d5a7a6f0772",
+      "published_sha256": "237c1eece6683eabf81b7a2850abda401655de5732657c47cd5b3d5a7a6f0772"
+    },
+    "tests/test_surgical_progress.py": {
+      "original_sha256": "b571c9c8c8420a1abfadf9d51aa45cd7d079595d40766a7e03bf6018e3ac29c9",
+      "published_sha256": "b571c9c8c8420a1abfadf9d51aa45cd7d079595d40766a7e03bf6018e3ac29c9"
+    },
+    "archive/tests/test_surgical_runtime.py": {
+      "original_sha256": "7ff214406f96d9592aee5799ff1ea2c95f2ea228d341575c96dde3e349b573ba",
+      "published_sha256": "7ff214406f96d9592aee5799ff1ea2c95f2ea228d341575c96dde3e349b573ba"
+    },
+    "config/surgical_task_v2.json": {
+      "original_sha256": "68a0a6c51b7c23116f1667169b25880d86623254e51c90e03a3f46f544059342",
+      "published_sha256": "68a0a6c51b7c23116f1667169b25880d86623254e51c90e03a3f46f544059342"
+    },
+    "config/surgical_task_v3.json": {
+      "original_sha256": "5025a4c0e23f25b3a65a7b8310c09d0aa9ada63359576182e926b2ad3036cf3c",
+      "published_sha256": "5025a4c0e23f25b3a65a7b8310c09d0aa9ada63359576182e926b2ad3036cf3c"
+    },
+    "config/surgical_policy_v3_development.json": {
+      "original_sha256": "f066ce2dde559815a5b9b1d96dcc0073be80e44d894cfaff93c61a44c972bd76",
+      "published_sha256": "f066ce2dde559815a5b9b1d96dcc0073be80e44d894cfaff93c61a44c972bd76"
+    },
+    "config/surgical_policy.json": {
+      "original_sha256": "ece9a2156a97f034d514ec91486fc55bcc1ad8027ee32c930a97df654ae29d5d",
+      "published_sha256": "ece9a2156a97f034d514ec91486fc55bcc1ad8027ee32c930a97df654ae29d5d"
+    },
+    "config/surgical_task.json": {
+      "original_sha256": "aacfbfa2690bacba28aab20f01ccc5d8ead8cc09e7cc45bb60433d15fa8b0720",
+      "published_sha256": "aacfbfa2690bacba28aab20f01ccc5d8ead8cc09e7cc45bb60433d15fa8b0720"
+    }
+  },
+  "publication_changes": {
+    "src/build_policy_cases.py": "An unused legacy CLI default was changed from a machine-specific home path to a repository-relative model path. Control, scoring, and orchestration logic are unchanged.",
+    "archive/tests/test_surgical_runtime.py": "Historical absolute-path/earlier-matrix orchestration checks are archived outside active discovery."
+  }
+}

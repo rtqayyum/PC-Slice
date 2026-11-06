@@ -1,0 +1,11 @@
+% Shared publication plotting style: color-blind-aware accents, direct units,
+% sparse grid, and consistent method ordering across every comparison.
+\definecolor{pcpurple}{RGB}{128,88,155}
+\definecolor{pccyan}{RGB}{0,145,164}
+\pgfplotsset{compat=1.18,
+ every axis/.append style={font=\footnotesize,label style={font=\footnotesize},
+ tick label style={font=\scriptsize},legend style={font=\scriptsize,draw=none,fill=white},
+ axis line style={black!55},tick style={black!55},grid=major,grid style={black!10},
+ major tick length=2pt,minor tick length=1pt,scaled ticks=false,axis on top},
+ methods/.style={ytick={0,...,8},yticklabels={Fixed short,Fixed long,Fixed extended,Event plan,ET-MPC*,Periodic MPC*,PC-Slice,Joint/fixed short,No checker},y dir=reverse,ymin=-.6,ymax=8.6},
+ compactmethods/.style={ytick={0,...,8},yticklabels={FS,FL,FX,EV,EM*,PM*,JP,JS,NC},y dir=reverse,ymin=-.6,ymax=8.6}}

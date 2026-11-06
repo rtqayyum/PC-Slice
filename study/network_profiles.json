@@ -1,0 +1,193 @@
+{
+  "freefault1": {
+    "id": "freefault1",
+    "kind": "no_fault",
+    "parameters": [],
+    "repetitions": 1,
+    "raw_line": "1 freefault1",
+    "line_numbers": [
+      1,
+      4,
+      7,
+      10,
+      13,
+      16
+    ]
+  },
+  "delay1": {
+    "id": "delay1",
+    "kind": "delay",
+    "parameters": [
+      70.0,
+      [
+        0.72645,
+        0.27355
+      ],
+      [
+        0.02711,
+        0.08529
+      ]
+    ],
+    "repetitions": 1,
+    "raw_line": "1 5G delay1 70 [0.72645, 0.27355] [0.02711, 0.08529]",
+    "line_numbers": [
+      20
+    ]
+  },
+  "delay2": {
+    "id": "delay2",
+    "kind": "delay",
+    "parameters": [
+      210.0,
+      [
+        0.89258,
+        0.10742
+      ],
+      [
+        0.01081,
+        0.01624
+      ]
+    ],
+    "repetitions": 1,
+    "raw_line": "1 5G delay2 210 [0.89258, 0.10742] [0.01081, 0.01624]",
+    "line_numbers": [
+      21
+    ]
+  },
+  "delay3": {
+    "id": "delay3",
+    "kind": "delay",
+    "parameters": [
+      406.0,
+      [
+        0.89574,
+        0.10426
+      ],
+      [
+        0.01025,
+        0.01551
+      ]
+    ],
+    "repetitions": 1,
+    "raw_line": "1 5G delay3 406 [0.89574, 0.10426] [0.01025, 0.01551]",
+    "line_numbers": [
+      19
+    ]
+  },
+  "packetloss1": {
+    "id": "packetloss1",
+    "kind": "packet_loss",
+    "parameters": [
+      [
+        0.95,
+        0.0,
+        0.05,
+        0.0,
+        4.428,
+        1.638
+      ],
+      [
+        0.9,
+        0.0,
+        0.1,
+        0.0,
+        4.966,
+        0.271
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "repetitions": 1,
+    "raw_line": "1 GE_Pareto_BLL packetloss1 [0.95, 0.0, 0.05, 0.0, 4.428, 1.638] [0.9, 0.0, 0.1, 0.0, 4.966, 0.271] [0.0, 0.0, 0.0, 0.0, 0.0, 0.0] [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]",
+    "line_numbers": [
+      25
+    ]
+  },
+  "packetloss3": {
+    "id": "packetloss3",
+    "kind": "packet_loss",
+    "parameters": [
+      [
+        0.95,
+        0.0,
+        0.05,
+        0.0,
+        3.859,
+        3.324
+      ],
+      [
+        0.9,
+        0.0,
+        0.1,
+        0.0,
+        3.797,
+        6.049
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "repetitions": 1,
+    "raw_line": "1 GE_Pareto_BLL packetloss3 [0.95, 0.0, 0.05, 0.0, 3.859, 3.324] [0.9, 0.0, 0.1, 0.0, 3.797, 6.049] [0.0, 0.0, 0.0, 0.0, 0.0, 0.0] [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]",
+    "line_numbers": [
+      27
+    ]
+  },
+  "communicationloss2": {
+    "id": "communicationloss2",
+    "kind": "communication_loss",
+    "parameters": [
+      1.0,
+      0.0,
+      1000.0,
+      1000.0
+    ],
+    "repetitions": 1,
+    "raw_line": "1 communicationloss2 1 0 1000 1000",
+    "line_numbers": [
+      24
+    ]
+  },
+  "communicationloss3": {
+    "id": "communicationloss3",
+    "kind": "communication_loss",
+    "parameters": [
+      1.0,
+      0.0,
+      2000.0,
+      1000.0
+    ],
+    "repetitions": 1,
+    "raw_line": "1 communicationloss3 1 0 2000 1000",
+    "line_numbers": [
+      23
+    ]
+  }
+}

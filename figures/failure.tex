@@ -1,0 +1,24 @@
+\begin{figure*}[t]\centering
+\begin{tikzpicture}
+\begin{axis}[width=.46\textwidth,height=4.8cm,xlabel={Tip $x$ (mm)},ylabel={Tip $y$ (mm)},axis equal image,
+ xmin=514,xmax=587,ymin=-32,ymax=18,legend style={at={(.02,.98)},anchor=north west,font=\scriptsize},grid=major]
+\addplot[draw=pcgray,fill=pcgray!20,domain=0:360,samples=101] ({550+13*cos(x)},{13*sin(x)});
+\addlegendentry{Exclusion projection}
+\addplot[pcorange,thick] table[x=x,y=y] {data/trajectory_joint_plan.dat};\addlegendentry{JP}
+\addplot[pcblue,thick,dashed] table[x=x,y=y] {data/trajectory_event_plan.dat};\addlegendentry{EV}
+\addplot[pcgray,densely dotted,thick] table[x=x,y=y] {data/trajectory_fixed_plan_short.dat};\addlegendentry{FS}
+\addplot[only marks,mark=o,mark size=3pt,black] coordinates {(528,-24)(572,-24)(582,0)};
+\end{axis}
+\begin{axis}[at={(.51\textwidth,0)},anchor=south west,width=.48\textwidth,height=4.8cm,
+ xlabel={Simulation time (s)},ylabel={Goal distance (mm)},xmin=0,xmax=16,ymin=0,
+ legend style={at={(.98,.98)},anchor=north east,legend columns=2}]
+\addplot[pcorange,thick] table[x=t,y=error] {data/trajectory_joint_plan.dat};
+\addplot[pcblue,thick,dashed] table[x=t,y=error] {data/trajectory_event_plan.dat};
+\addplot[pcgray,thick,densely dotted] table[x=t,y=error] {data/trajectory_fixed_plan_short.dat};
+\addplot[pcgreen,thick,dashdotted] table[x=t,y=error] {data/trajectory_joint_fixed_short.dat};
+\addplot[black,thin,dashed,domain=0:16] {5};
+\legend{JP,EV,FS,JS,Goal tolerance}
+\end{axis}
+\end{tikzpicture}
+\caption{Recorded extra JP failure: lower route, burst-loss profile P3, seed 31011. Left: horizontal projection; the disk is the projection of the sphere expanded by tip radius, not a 2-D collision test. Right: goal distance does not establish ordered-route completion. JP misses the first waypoint's 4-mm visit threshold and does not complete. Display trajectories are thinned to every four ticks; all scores and extrema use full records.}\label{fig:failure}
+\end{figure*}

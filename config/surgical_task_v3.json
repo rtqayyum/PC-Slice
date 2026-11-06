@@ -1,0 +1,31 @@
+{
+  "extends": "surgical_task_v2.json",
+  "version": "pcslice-surgical-joint-v3-progress-repair-development",
+  "backend": "packetized-v3",
+  "proposed_method": "joint_plan",
+  "methods": ["fixed_plan_short", "fixed_plan_long", "fixed_plan_extended", "event_plan", "et_mpc_adapted", "periodic_mpc_adapted", "joint_plan", "joint_fixed_short", "joint_no_checker"],
+  "comparison_baselines": ["fixed_plan_short", "fixed_plan_long", "fixed_plan_extended", "event_plan", "et_mpc_adapted", "periodic_mpc_adapted", "joint_fixed_short"],
+  "plan_horizons_ticks": [36, 72, 144],
+  "uncertainty_growth_m_s": 0.001,
+  "feedback_period_ticks": 12,
+  "feedback_share": 0.30,
+  "feedback_header_bytes": 27,
+  "initial_compute_ticks": 2,
+  "refresh_error_floor_m": 0.001,
+  "mpc_gain_blocks": 3,
+  "mpc_max_iterations": 8,
+  "seeds": [21001, 21002, 21003, 21004, 21005, 21006, 21007, 21008, 21009, 21010],
+  "layouts": [
+    {"id": "dev_v3_yplus", "split": "development", "axis": "y", "sign": 1, "z_shift_m": 0.0},
+    {"id": "dev_v3_yminus", "split": "development", "axis": "y", "sign": -1, "z_shift_m": 0.004}
+  ],
+  "policy_path": "config/surgical_policy_v3_development.json",
+  "policy": {"layouts": [], "seeds": [22001, 22002], "conditions": ["no_rag", "rag_k3", "rag_policy_k2", "rag_missing"]},
+  "origins": {
+    "revision_v3": "Development only. Authorized same-task algorithm improvement on 4 November 2026. Prior opened runs are development evidence. Final layouts/matrix must be separately frozen after development gate.",
+    "feedback": "Authored aggregate bidirectional byte scheduler with sampled state/buffer acknowledgments, impaired by the same published profile using a separate seeded potential-opportunity trace.",
+    "uncertainty": "Engineering sensitivity allowance of 1 mm/s forecast-horizon growth plus observed forecast residual; not a physically calibrated error bound or safety theorem.",
+    "timing": "Measured planning availability and receiver checker deadline misses enter simulated time; no hard-real-time deployment claim.",
+    "progress_repair": "5 November development repair: executed control-tick waypoint/dwell latch, independent of delayed sender phase. Progress/completion metadata uses charged 27-byte P3P1 feedback headers; terminal feedback repeats at the common sampling period. All methods discard expired or estimated-arrival-expired unsent plans and replan without retimestamping. No task thresholds changed or final release."
+  }
+}

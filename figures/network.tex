@@ -1,0 +1,15 @@
+\begin{figure}[t]\centering
+\begin{tikzpicture}
+\begin{axis}[compactmethods,width=.90\columnwidth,height=5.6cm,xmin=-.5,xmax=7.5,xtick={0,...,7},xticklabels={F,D1,D2,D3,P1,P3,O2,O3},xlabel={Network condition},grid=none,
+ colormap={completion}{color(0cm)=(white);color(1cm)=(pcblue!80)},point meta min=0,point meta max=100]
+\addplot[matrix plot*,mesh/cols=8,point meta=explicit,draw=white,line width=1pt] table[x=profile,y=method,meta=percentage] {data/network_counts.dat};
+\pgfplotstableforeachcolumnelement{successes}\of{data/network_counts.dat}\as\cellvalue{
+\pgfplotstablegetelem{\pgfplotstablerow}{profile}\of{data/network_counts.dat}\let\cx\pgfplotsretval
+\pgfplotstablegetelem{\pgfplotstablerow}{method}\of{data/network_counts.dat}\let\cy\pgfplotsretval
+\ifnum\cellvalue>2\def\cellcolor{white}\else\def\cellcolor{black}\fi
+\edef\drawcell{\noexpand\node[font=\noexpand\tiny,text=\cellcolor] at (axis cs:\cx,\cy) {\cellvalue};}\drawcell
+}
+\end{axis}
+\end{tikzpicture}
+\caption{Safe-completion counts out of four per cell, with darker shading indicating more completions. F: no fault; D1--D3: delay; P1/P3: burst loss; O2/O3: outage. JP differs from FS/EV/JS in P3; severe-outage failures are shared. EM*/PM* are reduced MPC adaptations.}\label{fig:network}
+\end{figure}

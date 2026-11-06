@@ -1,0 +1,14 @@
+\begin{figure}[t]\centering
+\begin{tikzpicture}
+\begin{axis}[width=\columnwidth,height=5.25cm,xmin=0,xmax=16,ymin=0,ymax=100,xtick={0,4,8,12,16},ytick={0,25,50,75,100},xlabel={Elapsed task time (s)},ylabel={Safe completions / all trials (\%)},legend style={at={(.98,.02)},anchor=south east,legend columns=2,font=\tiny}]
+\addplot[const plot,pcgray,thick,dashed] table[x=t,y=completed] {data/completion_FS.dat};
+\addplot[const plot,pcblue,thick] table[x=t,y=completed] {data/completion_EV.dat};
+\addplot[const plot,pcgreen,thick,dashdotted] table[x=t,y=completed] {data/completion_JS.dat};
+\addplot[const plot,pcorange,very thick] table[x=t,y=completed] {data/completion_JP.dat};
+\addplot[const plot,pcpurple,thick,densely dashed] table[x=t,y=completed] {data/completion_EM.dat};
+\addplot[const plot,pccyan,thick,densely dotted] table[x=t,y=completed] {data/completion_PM.dat};
+\legend{Fixed short,Event plan,Joint/fixed short,PC-Slice,ET-MPC*,Periodic MPC*}
+\end{axis}
+\end{tikzpicture}
+\caption{Cumulative safe completion on the same 32 settings. Every curve uses all trials in its denominator; unsuccessful trials remain uncompleted at 16 s. This avoids the selection bias of reporting completion time only for successful executions.}\label{fig:completion}
+\end{figure}

@@ -1,0 +1,21 @@
+\begin{figure*}[t]\centering
+\begin{tikzpicture}
+\begin{axis}[width=.47\textwidth,height=3.9cm,xmin=-.5,xmax=3.5,ymin=-.5,ymax=2.5,y dir=reverse,xtick={0,1,2,3},xticklabels={None,Top-3,Policy,Missing},ytick={0,1,2},yticklabels={Qwen2.5-7B,Mistral-7B,Phi-3.5-mini},title={Strict JSON prompt},title style={font=\footnotesize},grid=none,colormap={policyacc}{color(0cm)=(white);color(1cm)=(pcblue)},point meta min=0,point meta max=100]
+\addplot[matrix plot*,mesh/cols=4,point meta=explicit,draw=white,line width=1pt] table[x=condition,y=model,meta=accuracy] {data/semantic_strict.dat};
+\pgfplotstableforeachcolumnelement{correct}\of{data/semantic_strict.dat}\as\cv{
+\pgfplotstablegetelem{\pgfplotstablerow}{condition}\of{data/semantic_strict.dat}\let\cx\pgfplotsretval
+\pgfplotstablegetelem{\pgfplotstablerow}{model}\of{data/semantic_strict.dat}\let\cy\pgfplotsretval
+\ifnum\cv>6\def\cc{white}\else\def\cc{black}\fi
+\edef\drawcell{\noexpand\node[font=\noexpand\scriptsize,text=\cc] at (axis cs:\cx,\cy) {\cv/12};}\drawcell}
+\end{axis}
+\begin{axis}[at={(.53\textwidth,0)},anchor=south west,width=.44\textwidth,height=3.9cm,xmin=-.5,xmax=3.5,ymin=-.5,ymax=2.5,y dir=reverse,xtick={0,1,2,3},xticklabels={None,Top-3,Policy,Missing},ytick={0,1,2},yticklabels=\empty,title={Schema-constrained decoding},title style={font=\footnotesize},grid=none,colormap={policyacc}{color(0cm)=(white);color(1cm)=(pcblue)},point meta min=0,point meta max=100]
+\addplot[matrix plot*,mesh/cols=4,point meta=explicit,draw=white,line width=1pt] table[x=condition,y=model,meta=accuracy] {data/semantic_constrained.dat};
+\pgfplotstableforeachcolumnelement{correct}\of{data/semantic_constrained.dat}\as\cv{
+\pgfplotstablegetelem{\pgfplotstablerow}{condition}\of{data/semantic_constrained.dat}\let\cx\pgfplotsretval
+\pgfplotstablegetelem{\pgfplotstablerow}{model}\of{data/semantic_constrained.dat}\let\cy\pgfplotsretval
+\ifnum\cv>6\def\cc{white}\else\def\cc{black}\fi
+\edef\drawcell{\noexpand\node[font=\noexpand\scriptsize,text=\cc] at (axis cs:\cx,\cy) {\cv/12};}\drawcell}
+\end{axis}
+\end{tikzpicture}
+\caption{Contextually correct policy decisions out of twelve, for every model/retrieval/decoder condition. Darker cells indicate greater correctness. All constrained outputs satisfy the schema, but their semantic decisions are frequently incorrect. Policy: two service documents plus invariant text. Missing: relevant evidence deliberately removed.}\label{fig:policy}
+\end{figure*}
